@@ -2,6 +2,19 @@
 <html lang="ko">
   <head>
     <title>끄투 단어 검색기 (beta)</title>
+    <script>
+        function amho(){
+        var val = document.getElementById("amho").value;
+        if (val == "tsuojinmsquid"){
+          ok();
+        }
+      }
+      function ok(){
+        document.write("<h1>끄투 단어 검색기 (beta)</h1><br/>");
+        document.write("<input type='text' id='search'/><br/>");
+        document.write("<input type='button' onclick='search();'/><br/>");
+      }
+    </script>
   </head> 
   <body>
     <div id="title">
@@ -9,7 +22,7 @@
         끄투 단어 검색기 (beta) <br/>
       </h1>
         베타이기 때문에 암호를 입력해야 됩니다. <br/>
-        <input type="text" id="amho"/><input type="button" value="확인"/> <br/>
+        <input type="text" id="amho"/><input type="button" value="확인" onclick="amho();"/> <br/>
     </div>
   </body>
 </html>
