@@ -6,8 +6,11 @@
   <h1> 끄투 단어 검색기 (beta)</h1>
   <input type='text' id='search'  onkeypress='if(event.keyCode == 13) search();' /><br/>
   <input type='button' onclick='search();'value='검색'/><br/><br/>
+    <div id="result">
+    </div>
     <script>
 function search(){
+        document.getElementById("result").innerHTML = "";
         var db_daneo = ['가족관계의등록등에관한법률', '가로자기마당전기기계증폭기'];
         var db_daneofirst = ['가', '가'];
         var db_daneogulza = [13, 13];
@@ -22,7 +25,7 @@ function search(){
           }
           x--;
         }
-        document.write(result);
+        document.getElementById("result").innerHTML = (result);
       }
   </script>
   </body>
