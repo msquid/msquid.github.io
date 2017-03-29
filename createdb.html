@@ -2,7 +2,7 @@
 <html lang="ko">
   <head></head>
   <body>
-    <input type="text" id="tb1" size="1"/><input type="text" id="tb2" onkeypress="if(event.keyCode == 13) db();"/><input type="button" onclick="db();" value="create!"/><br>
+    <input type="text" id="tb1" size="1"/><input type="text" id="tb2" onkeypress="if(event.keyCode == 13) db();"/><input type="button" onclick="db();" value="create!"/><input type="button" onclick="undo();" value="undo!"/>
     <br><div id="ss"></div>
     <script>
     var list = [];
@@ -26,6 +26,11 @@
             aaa--;
         }
         document.getElementById("ss").innerHTML = "var db_daneo = [" + show +"]; <br> var db_daneofirst = [" + showfirst + "]; <br> var db_daneogulza = [" + showword + "];";
+      }
+      function undo(){
+        list[list.length-1] = null;
+        listfirst[listfirst.length-1] = null;
+        listwords[listwords.length-1] = null;
       }
     </script>
   </body>
