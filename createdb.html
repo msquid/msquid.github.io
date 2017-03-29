@@ -8,6 +8,7 @@
     var list = [];
     var listfirst = [];
     var listwords = [];
+    var listkungkung = [];
       function db(){
         var first = document.getElementById("tb1").value;
         var fuc = document.getElementById("tb2").value;
@@ -15,17 +16,24 @@
         list[list.length] = first+fuc;
         var leng = first.length + fuc.length;
         listwords[listwords.length] = leng;
+        if (leng == 3){
+        listkungkung[listkungkung.length] = 'true';
+        }else{
+        listkungkung[listkungkung.length] = 'false';
+        }
         var aaa = list.length-1;
         var showfirst = "";
         var show = "";
         var showword = "";
+        var showkungkung = "";
         while ( aaa > -1 ){
             show+= "'" + list[aaa] + "' , ";
             showfirst+= "'" + listfirst[aaa] + "' , ";
             showword+= "'" + listwords[aaa] + "' , ";
+            showkungkung+= "'" + listwords[aaa] + "' , ";
             aaa--;
         }
-        document.getElementById("ss").innerHTML = "var db_daneo = [" + show +"]; <br> var db_daneofirst = [" + showfirst + "]; <br> var db_daneogulza = [" + showword + "];";
+        document.getElementById("ss").innerHTML = "var db_daneo = [" + show +"]; <br> var db_daneofirst = [" + showfirst + "]; <br> var db_daneogulza = [" + showword + "]; <br> var kungkung = [" + showkungkung + "];";
       }
       function undo(){
         list[list.length-1] = '';
@@ -35,10 +43,12 @@
         var showfirst = "";
         var show = "";
         var showword = "";
+        var showkungkung = "";
         while ( aaa > -1 ){
             show+= "'" + list[aaa] + "' , ";
             showfirst+= "'" + listfirst[aaa] + "' , ";
             showword+= "'" + listwords[aaa] + "' , ";
+            showkungkung+= "'" + listwords[aaa] + "' , ";
             aaa--;
         }
         document.getElementById("ss").innerHTML = "var db_daneo = [" + show +"]; <br> var db_daneofirst = [" + showfirst + "]; <br> var db_daneogulza = [" + showword + "];";
