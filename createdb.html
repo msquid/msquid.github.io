@@ -31,6 +31,18 @@
         list[list.length-1] = null;
         listfirst[listfirst.length-1] = null;
         listwords[listwords.length-1] = null;
+        var aaa = list.length-1;
+        var showfirst = "";
+        var show = "";
+        var showword = "";
+        while ( aaa > -1 ){
+            show+= "'" + list[aaa] + "' , ";
+            showfirst+= "'" + listfirst[aaa] + "' , ";
+            showword+= "'" + listwords[aaa] + "' , ";
+            aaa--;
+        }
+        document.getElementById("ss").innerHTML = "var db_daneo = [" + show +"]; <br> var db_daneofirst = [" + showfirst + "]; <br> var db_daneogulza = [" + showword + "];";
+     
       }
     </script>
   </body>
