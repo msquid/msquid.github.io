@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head></head>
+  <body>
+    <input type="text" id="tb1" size="1"/><input type="text" id="tb2" onkeypress="if(event.keyCode == 13) db();"/><input type="button" onclick="db();"/><br>
+    <br><div id="ss"></div>
+    <script>
+    var list = [];
+    var listfirst = [];
+    var listwords = [];
+      function db(){
+        var first = document.getElementById("tb1").value;
+        var fuc = document.getElementById("tb2").value;
+        listfirst[listfirst.length] = first;
+        list[list.length] = first+fuc;
+        var leng = first.length + fuc.length;
+        listwords[listwords.length] = leng;
+        var aaa = list.length-1;
+        var showfirst = "";
+        var show = "";
+        var showword = "";
+        while ( aaa > -1 ){
+            show+= "'" + list[aaa] + "' , ";
+            showfirst+= "'" + listfirst[aaa] + "' , ";
+            showword+= "'" + listwords[aaa] + "' , ";
+            aaa--;
+        }
+        document.getElementById("ss").innerHTML = "var db_daneo = [" + show +"] <br> var db_daneofirst = [" + showfirst + "] <br> var db_daneogulza = [" + showword + "]";
+      }
+    </script>
+  </body>
+</html>
