@@ -4,7 +4,7 @@
   </head>
   <body>
   <h1> 끄투 단어 검색기 (beta)</h1>
-  <input type='text' id='search'  onkeypress='if(event.keyCode == 13) search();' /><input type="checkbox" name="ch" onclick="checked();"/>쿵쿵따<br/>
+  <input type='text' id='search'  onkeypress='if(event.keyCode == 13) search();' /><input type="checkbox" name="ch" onclick="checed();"/>쿵쿵따<br/>
   <input type='button' onclick='search();'value='검색'/><br/><br/>
     
     <div id="result">
@@ -70,7 +70,7 @@ function search(){
         }
         document.getElementById("result").innerHTML = (result);
       }
-      function checked(){
+      function checed(){
        if (check == true){
          check = false;
        }else{
