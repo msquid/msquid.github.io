@@ -1,2 +1,2 @@
-var xver = "0.0.0.1";
-var vver = 0.001;
+var xver = "0.0.0.2";
+var vver = 0.002;
