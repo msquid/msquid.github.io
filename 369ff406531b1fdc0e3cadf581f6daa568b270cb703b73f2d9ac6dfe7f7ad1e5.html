@@ -205,7 +205,7 @@ function search(){
     }
       function isReallyAdmin(){
         var para=getParameterByName('psw');
-        if (!(SHA256((para+"#")) == "369ff406531b1fdc0e3cadf581f6daa568b270cb703b73f2d9ac6dfe7f7ad1e5")){
+        if (!(SHA256((para+"#")) == "369ff406531b1fdc0e3cadf581f6daa568b270cb703b73f2d9ac6dfe7f7ad1e5" || SHA256((para+"#")) == "6fdbf98d760906ad7e9c38e455a89b406744427f039bf32b90a3b41449a0ac70")){
           location.replace("https://msquid.github.io");
         }
       }
