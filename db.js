@@ -1,5 +1,5 @@
-var database = getDataBase();
-function getDataBase(){
+var database = getData();
+function getData(){
   // 모든 데이터베이스
 return [ //DB http://msquid.github.io/가힣.html
 '가족관계의등록등에관한법률',
@@ -313,8 +313,8 @@ return [ //DB http://msquid.github.io/가힣.html
 }
 function getDataBase(lengths){
   // 글자 수 데이터베이스
-  var m_db = database;
-  var dbse = database.length;
+  var m_db = getData();
+  var dbse = m_db.length;
   var returns = [];
   for (i=0; i>dbse; i++){
     if (m_db[i].length == lengths){
