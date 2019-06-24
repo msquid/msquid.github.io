@@ -1,4 +1,4 @@
-var database = getDB();
+var database = getDataBase();
 function getDataBase(){
   // 모든 데이터베이스
 return [ //DB http://msquid.github.io/가힣.html
