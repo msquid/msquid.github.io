@@ -313,7 +313,7 @@ return [ //DB http://msquid.github.io/가힣.html
 }
 function getDataBase(lengths){
   // 글자 수 데이터베이스
-  var m_db = getDataBase();
+  var m_db = database;
   var returns = [];
   for (i=0; i>m_db.length; i++){
     if (m_db[i].length == lengths){
