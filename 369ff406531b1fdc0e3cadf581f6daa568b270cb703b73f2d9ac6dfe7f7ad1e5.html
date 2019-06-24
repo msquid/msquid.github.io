@@ -10,7 +10,7 @@
     
     <div id="result">
     </div>
-    <script src="db.js"></script>
+    <script src="db.js">var dbs = database.length;</script>
     <script>
       var check = false;
 function search(){
@@ -18,6 +18,7 @@ function search(){
         var result="";
         var val = document.getElementById("search").value;
         var x = 0;
+        var found=0;
         while (x < database.length){
           var thi = database[x];
           var thi_first = thi.charAt(0);
@@ -25,21 +26,24 @@ function search(){
           if (!check){
             if (thi.length != 3) {
             result+=thi+" ("+thi.length+")<br/>";
+            found++;
             }else {
             result+=thi+" ("+thi.length+")<br/>";
+            found++;
             }
           }else{
-          if (thi.length != 3) {
-            
-            }else {
+          if (thi.length == 3) {
+            found++;
             result+=thi+" (3)<br/>";
             }
+       
           }
           
          
         }
            x++;
         }
+        var result= "데이터 베이스 "+dbs+"개 중에서 "+found+"개를 찾았습니다" + result;
         document.getElementById("result").innerHTML = (result);
       }
       function checed(){
