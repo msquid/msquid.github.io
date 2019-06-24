@@ -16,8 +16,8 @@
       var dbs = database.length;
       var kkdatabase=getDataBase(3);
       var kkdbs = kkdatabase.length;
-    database= database.sort();
-    kkdatabase= kkdatabase.sort();
+    database= database.sort(function(a, b){return b.length - a.length});
+    kkdatabase= kkdatabase.sort(function(a, b){return b.length - a.length});
 function search(){
         document.getElementById("result").innerHTML = "";
         var result="";
