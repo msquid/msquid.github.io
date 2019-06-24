@@ -22,30 +22,28 @@ function search(){
         var val = document.getElementById("search").value;
         var x = 0;
         var found=0;
+  if(!check){
         while (x < database.length){
           var thi = database[x];
           var thi_first = thi.charAt(0);
           if (thi_first == val){
-          if (!check){
-            if (thi.length != 3) {
             result+=thi+" ("+thi.length+")<br/>";
             found++;
-            }else {
-            result+=thi+" ("+thi.length+")<br/>";
-            found++;
-            }
-          }else{
-          if (thi.length == 3) {
-            found++;
-            result+=thi+" (3)<br/>";
-            }
-       
           }
-          
-         
-        }
            x++;
         }
+  }
+  else if(check){
+        while (x < kkdatabase.length){
+          var thi = kkdatabase[x];
+          var thi_first = thi.charAt(0);
+          if (thi_first == val){
+            result+=thi+" ("+thi.length+")<br/>";
+            found++;
+          }
+           x++;
+        }
+  }
   if(check)
         var result= "<strong>쿵쿵따 데이터 베이스 "+kkdbs+"개 중에서 "+found+"개를 찾았습니다.</strong><br>" + result;
   else
