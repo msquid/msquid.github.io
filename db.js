@@ -316,7 +316,7 @@ function getDataBase(lengths){
   var m_db = getData();
   var dbse = m_db.length;
   var returns = [];
-  for (i=0; i>dbse; i++){
+  for (i=0; i<dbse; i++){
     if (m_db[i].length == lengths){
       returns[returns.length] = m_db[i];
     }
