@@ -1,5 +1,6 @@
-var database=
-[ //DB http://msquid.github.io/가힣.html
+var database = getDB();
+function getDB(){
+return [ //DB http://msquid.github.io/가힣.html
 '가족관계의등록등에관한법률',
 '가로자기마당전기기계증폭기',
 '가장사랑스러운너에게축복을',
@@ -308,3 +309,4 @@ var database=
 '겡가리',
 '겡우' // 갱 끝
 ];
+}
