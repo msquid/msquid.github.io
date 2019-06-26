@@ -1,0 +1,21 @@
+function toEncrypt(var str){
+  var arr = getArrayByString(str);
+  var encrypted = 0;
+  var decryptkey = [];
+  var en_and_key = [];
+  // x =
+  for (i=0; i<arr.length; i++){
+    encrypted += arr[i].charCodeAt(0);
+    decryptkey[i] = arr[i].toString(2);
+  }
+  en_and_key[0] = encrypted;
+  en_and_key[1] = decryptkey;
+  return en_and_key;
+}
+function getArrayByString(var str){
+  var returns = [];
+  for (i=0; i<str.length; i++){
+    returns[i] = str.CharAt(str.length-1);
+  }
+  return returns;
+}
