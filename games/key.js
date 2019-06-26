@@ -9,7 +9,7 @@ function toEncrypt(str){
   }
   var cho = encrypted;
   encrypted = (encrypted-((i^3)+(((i+1)^2)/i)))*(i^(5^i)) + (i^(i^i));
-  recrypted = encrypted+((i^3)+(((i+1)^2)/i)))*(i^(5^i)) - (i^(i^i));
+  recrypted = encrypted+(((i^3)+(((i+1)^2)/i)))*(i^(5^i)) - (i^(i^i));
   en_and_key[0] = encrypted + " | " +recrypted+ " | "+cho+" | "+i;
   en_and_key[1] = i;
   return en_and_key;
