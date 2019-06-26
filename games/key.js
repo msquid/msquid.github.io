@@ -6,11 +6,10 @@ function toEncrypt(str){
   // x =
   for (i=0; i<arr.length; i++){
     encrypted += arr[i].charCodeAt(0);
-    decryptkey[i] = arr[i].toString(2);
   }
   encrypted = Math.floor(encrypted-(i^3)+(((i+1)^2)/i))*i + i^i;
   en_and_key[0] = encrypted;
-  en_and_key[1] = decryptkey;
+  en_and_key[1] = i;
   return en_and_key;
 }
 function getArrayByString(str){
