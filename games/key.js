@@ -8,7 +8,7 @@ function toEncrypt(str){
     encrypted += arr[i].charCodeAt(0);
     decryptkey[i] = arr[i].toString(2);
   }
-  encrypted = encrypted-(i^3)+(((i+1)^2)/i);
+  encrypted = Math.floor(encrypted-(i^3)+(((i+1)^2)/i))*i + i^i;
   en_and_key[0] = encrypted;
   en_and_key[1] = decryptkey;
   return en_and_key;
