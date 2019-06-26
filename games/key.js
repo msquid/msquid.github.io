@@ -1,4 +1,4 @@
-function toEncrypt(var str){
+function toEncrypt(str){
   var arr = getArrayByString(str);
   var encrypted = 0;
   var decryptkey = [];
@@ -12,7 +12,7 @@ function toEncrypt(var str){
   en_and_key[1] = decryptkey;
   return en_and_key;
 }
-function getArrayByString(var str){
+function getArrayByString(str){
   var returns = [];
   for (i=0; i<str.length; i++){
     returns[i] = str.CharAt(str.length-1);
