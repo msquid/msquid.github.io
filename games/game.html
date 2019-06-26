@@ -1,4 +1,7 @@
 <script src="key.js"></script>
 <script>
-alert(toEncrypt("암호화 된 텍스트")[0]);
+  function encrypt(){
+alert(toEncrypt(document.getElementById('inputs'))[0]);
+  }
 </script>
+<input id="inputs"></input> <button onclick="encrypt();">
