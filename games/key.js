@@ -14,7 +14,7 @@ function toEncrypt(str){
   en_and_key[1] = i;
   return en_and_key;
 }
-function getCodeByDecrypt(inter){
+function getCodeByDecrypt(inter, i){
   return (inter+(((i^3)+(((i+1)^2)/i)))*(i^(5^i)) - (i^(i^i)))/5
 }
 function getArrayByString(str){
