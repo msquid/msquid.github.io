@@ -15,7 +15,7 @@ function toEncrypt(str){
 function getArrayByString(str){
   var returns = [];
   for (i=0; i<str.length; i++){
-    returns[i] = str.CharAt(str.length-1);
+    returns[i] = str.charAt(str.length-1);
   }
   return returns;
 }
