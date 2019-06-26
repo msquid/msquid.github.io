@@ -1,7 +1,11 @@
 <script src="key.js"></script>
 <script>
   function encrypt(){
-alert(toEncrypt(document.getElementById('inputs').value)[0]);
+    var text = document.getElementById('inputs').value;
+    var enc = toEncrypt(text);
+    var end = enc[0];
+    var i = enc[1];
+alert("코드: " +end+", i:"+i+", 디크립트:"+getCodeByDecrypt(enc,i));
   }
 </script>
 <input id="inputs"></input> <button onclick="encrypt();">가</button>
