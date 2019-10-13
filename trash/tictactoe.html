@@ -1,0 +1,301 @@
+
+<div id="lol"></div><br><br><div id="log"></div>
+<script>
+var log=confirm("log를 활성화하시겠습니까? (확인:예, 취소:아니오. 경고: 로그를 활성화한다면 비활성화 된 것보다 2000배 느립니다!)");
+alert("CPU 사용률은 25%이고, RAM 사용량은 최대 1GB 입니다. 시작하실려면 확인을 눌러주십시오.");
+var logtxt="";
+var AIwins=0;
+var COMwins=0;
+var gen=1;
+var win=[/*0*/[1,2,3],/*1*/[1,4,7],/*2*/[2,5,8],/*3*/[1,5,9],/*4*/[3,5,7],/*5*/[4,5,6],/*6*/[7,8,9],/*7*/[3,6,9]];
+var no=[];
+var genwin=[];
+var genlose=[];
+function Gens(data){
+
+var pai=[];
+var first=[];
+var learn=[];
+//if(gen==1){
+var winner=false;
+ while(winner!=true){
+ //alert(first+" AND "+learn+" AND "+pai.length);
+ var noy=true;
+while(noy){
+var yes=false;
+var RAN = Math.floor(Math.random()*9)+1;
+if (!first.includes(RAN)){
+if (!learn.includes(RAN)){
+break;
+}
+}
+}
+
+first[first.length] = RAN;
+pai[pai.length] = RAN;
+if(pai.length==9){
+break;
+}
+ var noy=true;
+ 
+while(noy){
+var RAN = Math.floor(Math.random()*9)+1;
+if (!first.includes(RAN)){
+if (!learn.includes(RAN)){
+if(!no.includes(RAN)){
+break;
+}
+}
+}
+
+}
+learn[learn.length] = RAN;
+pai[pai.length] = RAN;
+var win0=0;
+var win1=0;
+var win2=0;
+var win3=0;
+var win4=0;
+var win5=0;
+var win6=0;
+var win7=0;
+for(q=0;q<first.length;q++){
+	if(first[q]==1){
+		win0+=1;win1+=1;win3+=1;
+	}
+	if(first[q]==2){
+		win0+=1;win2+=1;
+	}
+	if(first[q]==3){
+		win0+=1;win4+=1;win7+=1;
+	}
+	if(first[q]==4){
+		win1+=1;win5+=1;
+	}
+	if(first[q]==5){
+		win2+=1;win3+=1;win4+=1;win5+=1;
+	}
+	if(first[q]==6){
+		win5+=1;win7+=1;
+	}
+	if(first[q]==7){
+		win1+=1;win4+=1;win6+=1;
+	}
+	if(first[q]==8){
+		win2+=1;win6+=1;
+	}
+	if(first[q]==9){
+		win3+=1;win6+=1;win7+=1;
+	}
+}
+if(win0==3 || win1==3 || win2==3 || win3==3 || win4==3 || win5==3 || win6==3 || win7==3){
+
+genwin[genwin.length] = "컴퓨터 1";
+genlose[genlose.length] = "AI";
+winner=true;
+
+break;
+}
+var win0=0;
+var win1=0;
+var win2=0;
+var win3=0;
+var win4=0;
+var win5=0;
+var win6=0;
+var win7=0;
+for(q=0;q<learn.length;q++){
+	if(learn[q]==1){
+		win0+=1;win1+=1;win3+=1;
+	}
+	if(learn[q]==2){
+		win0+=1;win2+=1;
+	}
+	if(learn[q]==3){
+		win0+=1;win4+=1;win7+=1;
+	}
+	if(learn[q]==4){
+		win1+=1;win5+=1;
+	}
+	if(learn[q]==5){
+		win2+=1;win3+=1;win4+=1;win5+=1;
+	}
+	if(learn[q]==6){
+		win5+=1;win7+=1;
+	}
+	if(learn[q]==7){
+		win1+=1;win4+=1;win6+=1;
+	}
+	if(learn[q]==8){
+		win2+=1;win6+=1;
+	}
+	if(learn[q]==9){
+		win3+=1;win6+=1;win7+=1;
+	}
+}
+if(win0==3 || win1==3 || win2==3 || win3==3 || win4==3 || win5==3 || win6==3 || win7==3){
+
+genwin[genwin.length] = "AI";
+genlose[genlose.length] = "컴퓨터 1";
+winner=true;
+
+break;
+}
+
+ }
+ //}
+ var list=[0,'_','_','_','_','_','_','_','_','_'];
+for(i=1;i<10;i++){
+if(first.includes(i)){
+ list[i]='O';
+}
+if(learn.includes(i)){
+ list[i]='X';
+}
+}
+/*if (false==true){
+var list=[0,'E','E','E','E','E','E','E','E','E'];
+for(i=1;i<10;i++){
+if(first.includes(i)){
+ list[i]='O';
+}
+if(learn.includes(i)){
+ list[i]='X';
+}
+}
+return "DRAW: <br>|"+list[1]+"|"+list[2]+"|"+list[3]+"|<br>|"+list[4]+"|"+list[5]+"|"+list[6]+"|<br>|"+list[7]+"|"+list[8]+"|"+list[9]+"|";
+//break;
+
+}*/
+var win0=0;
+var win1=0;
+var win2=0;
+var win3=0;
+var win4=0;
+var win5=0;
+var win6=0;
+var win7=0;
+for(q=0;q<first.length;q++){
+	if(first[q]==1){
+		win0+=1;win1+=1;win3+=1;
+	}
+	if(first[q]==2){
+		win0+=1;win2+=1;
+	}
+	if(first[q]==3){
+		win0+=1;win4+=1;win7+=1;
+	}
+	if(first[q]==4){
+		win1+=1;win5+=1;
+	}
+	if(first[q]==5){
+		win2+=1;win3+=1;win4+=1;win5+=1;
+	}
+	if(first[q]==6){
+		win5+=1;win7+=1;
+	}
+	if(first[q]==7){
+		win1+=1;win4+=1;win6+=1;
+	}
+	if(first[q]==8){
+		win2+=1;win6+=1;
+	}
+	if(first[q]==9){
+		win3+=1;win6+=1;win7+=1;
+	}
+}
+if(win0==3 || win1==3 || win2==3 || win3==3 || win4==3 || win5==3 || win6==3 || win7==3){
+
+genwin[genwin.length] = "컴퓨터 1";
+genlose[genlose.length] = "AI";
+winner=true;
+
+}
+var win0=0;
+var win1=0;
+var win2=0;
+var win3=0;
+var win4=0;
+var win5=0;
+var win6=0;
+var win7=0;
+for(q=0;q<learn.length;q++){
+	if(learn[q]==1){
+		win0+=1;win1+=1;win3+=1;
+	}
+	if(learn[q]==2){
+		win0+=1;win2+=1;
+	}
+	if(learn[q]==3){
+		win0+=1;win4+=1;win7+=1;
+	}
+	if(learn[q]==4){
+		win1+=1;win5+=1;
+	}
+	if(learn[q]==5){
+		win2+=1;win3+=1;win4+=1;win5+=1;
+	}
+	if(learn[q]==6){
+		win5+=1;win7+=1;
+	}
+	if(learn[q]==7){
+		win1+=1;win4+=1;win6+=1;
+	}
+	if(learn[q]==8){
+		win2+=1;win6+=1;
+	}
+	if(learn[q]==9){
+		win3+=1;win6+=1;win7+=1;
+	}
+}
+if(win0==3 || win1==3 || win2==3 || win3==3 || win4==3 || win5==3 || win6==3 || win7==3){
+
+genwin[genwin.length] = "AI";
+genlose[genlose.length] = "컴퓨터 1";
+winner=true;
+
+}
+if(genwin[genwin.length-1]==null)
+genwin[genwin.length]="DRAW";
+
+if(genwin[genwin.length-1]=="컴퓨터 1"){
+COMwins++;
+}else if(genwin[genwin.length-1]=="AI"){
+
+//no[no.length] = learn[1];
+AIwins++;
+}
+if(log==true){
+let swinner = genwin[genwin.length-1];
+swinner = swinner.replace("AI","후");
+swinner = swinner.replace("컴퓨터 1","선");
+if(swinner=="선")
+logtxt+="<br><br><font color='red'>"+(AIwins+COMwins)+"번째 승부!<br>|"+list[1]+"|"+list[2]+"|"+list[3]+"|<br>|"+list[4]+"|"+list[5]+"|"+list[6]+"|<br>|"+list[7]+"|"+list[8]+"|"+list[9]+"| <br><br> 결과: "+swinner+" 승!</font>";
+else
+logtxt+="<br><br><font color='blue'>"+(AIwins+COMwins)+"번째 승부!<br>|"+list[1]+"|"+list[2]+"|"+list[3]+"|<br>|"+list[4]+"|"+list[5]+"|"+list[6]+"|<br>|"+list[7]+"|"+list[8]+"|"+list[9]+"| <br><br> 결과: "+swinner+" 승!</font>";
+}//return genwin[genwin.length-1]+": <br>|"+list[1]+"|"+list[2]+"|"+list[3]+"|<br>|"+list[4]+"|"+list[5]+"|"+list[6]+"|<br>|"+list[7]+"|"+list[8]+"|"+list[9]+"|";
+}
+var times=0;
+function r(){
+times++;
+Gens(1);
+document.getElementById('lol').innerHTML = ("틱택토: 선 "+COMwins+"승:"+AIwins+"승 후, 선 승률: "+((COMwins/(COMwins+AIwins))*100).toFixed(7) +"%, 후 승률: "+((AIwins/(COMwins+AIwins))*100).toFixed(7)+"%, (총 "+(COMwins+AIwins)+"전)");
+if(log==true){
+document.getElementById('log').innerHTML = logtxt;
+}
+if(times>10000){
+if(log==false){
+setTimeout(r,1);
+}else{
+setTimeout(r,10);
+}
+times=0;
+}else{if(log==false){
+r();
+}else{
+setTimeout(r,10);
+}}
+
+}
+r();
+</script>
