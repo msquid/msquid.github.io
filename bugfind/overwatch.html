@@ -1,0 +1,130 @@
+<html>
+
+<!-- HTML 코드를 보셨네요. 당신은 벌레입니다. -->
+
+<head>
+<script>
+function dg(e){
+return document.getElementById(e);
+}
+function gs(a){
+return a.options[a.selectedIndex].value;
+}
+function Pandok(){
+var bug_stat = 0;
+var tier_select = dg("tier");
+var position_select = dg("position");
+var kill_n_death_doc = dg("kill_death");
+var burn_time_doc = dg("burn_time");
+var checked,tier,position,kill_death,burn_time;
+for(var i = 0; i < 2; i++) {if(document.isTrash_.elements["isTrash"][i].checked) {checked = document.isTrash_.elements['isTrash'][i].value;break;}}
+if (!(checked == "yes"))
+bug_stat += 1;
+tier = gs(tier_select);
+position = gs(position_select);
+kill_death = kill_n_death_doc.value;
+burn_time = burn_time_doc.value;
+
+//티어
+switch (tier){
+case "beu":
+bug_stat += 2;
+break;
+case "sil":
+bug_stat += 1.5;
+break;
+case "gol":
+bug_stat += 1;
+break;
+case "pla":
+bug_stat += 1;
+break;
+case "dai":
+bug_stat += 1;
+break;
+case "mas":
+bug_stat += 0.5;
+break;
+}
+
+//포지션
+switch (position){
+case "deal":
+bug_stat += 5;
+break;
+case "tank":
+bug_stat += 4;
+break;
+case "heal":
+bug_stat += 5;
+break;
+case "deal'n'tank":
+bug_stat += 3;
+break;
+case "deal'n'heal":
+bug_stat += 4;
+break;
+case "tank'n'heal":
+bug_stat += 3;
+break;
+case "all-rounder":
+bug_stat += 2;
+break;
+}
+
+//킬데스
+if (!(kill_death == kill_death.split('d')[0]))
+bug_stat -= parseFloat(kill_death.split('d')[1]);
+if (!(kill_death == kill_death.split('t')[0]))
+bug_stat -= parseFloat(kill_death.split('t')[1]);
+if (!(kill_death == kill_death.split('h')[0]))
+bug_stat -= (parseFloat(kill_death.split('h')[1]) + 2);
+
+//폭주시간
+if (!(kill_death == kill_death.split('d')[0]))
+bug_stat -= burn_time / 30;
+if (!(kill_death == kill_death.split('t')[0]))
+bug_stat -= burn_time / 35;
+if (!(kill_death == kill_death.split('h')[0]))
+bug_stat -= burn_time / 25;
+
+//점수 매기기
+var bug_score = 5 + (bug_stat); 
+
+alert("벌레 지수 : "+bug_score);
+}
+</script>
+</head>
+<body>
+<center><h1>오버워치 벌레판독기<iframe src="http://image.nv.uy.to" width="120" height="120" frameBorder="0"></iframe></h1>
+2019. 1. 27. 제작<br><a href="http://롤.벌레판독기.메인.한국/">리그 오브 레전드</a>&nbsp;&nbsp;&nbsp;<a href="http://배그.벌레판독기.메인.한국/">배틀그라운드</a>
+<br>
+<p>당신의 티어를 선택하세요.</p>
+<select id="tier">
+  <option value="beu">브론즈</option>
+  <option value="sil">실버</option>
+  <option value="gol">골드</option>
+  <option value="pla">플래티넘</option>
+  <option value="dai">다이아몬드</option>
+  <option value="mas">마스터</option>
+  <option value="gma">그랜드마스터</option>
+</select>
+<p>당신의 포지션을 선택하세요.</p>
+<select id="position">
+  <option value="deal">딜러</option>
+  <option value="tank">탱커</option>
+  <option value="heal">힐러</option>
+  <option value="deal'n'tank">딜러+탱커</option>
+  <option value="deal'n'heal">딜러+힐러</option>
+  <option value="tank'n'heal">탱커+힐러</option>
+  <option value="all-rounder">모두 (올라운더, 플렉스)</option>
+</select>
+<p>주챔(포지션에 속한것중 가장 많이 플레이한것)의 목숨당 처치를 입력하세요. <br>*소수 두자리수까지 입력해주세요. 주챔이 딜러일경우 앞에 d, 탱커일 경우 t, 힐러일 경우 h을 붙이세요. 예) 3.55 딜러 -> d3.55, 0.86 힐러 -> h0.86</p>
+<input type="text" id="kill_death" placeholder="여기에 입력" />
+<p>주챔(포지션에 속한것중 가장 많이 플레이한것)의 평균 폭주 시간을 입력하세요. <br>*초 단위로 입력하세요. <strong>'초'</strong>는 붙히지 마세요. 예) 1분 30초 -> 90</p>
+<input type="text" id="burn_time" placeholder="여기에 입력" />
+<p>당신은 평소 팀원들의 요구를 잘 들어주는 편입니까?<br>예) 조합 맞춰요. / 33 갑시다 / 윈디 ㄱㄱ 등 요구에 응해줌.</p>
+ <form name="isTrash_"><input type="radio" name="isTrash" checked="checked" value="yes"/> <span class="up">예</span>  <input type="radio" value="no" name="isTrash"/> <span class="up">아니오</span></form><br><br>
+<button onClick="Pandok();">판독하기</button>
+</center></body>
+</html>
