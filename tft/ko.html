@@ -280,6 +280,7 @@
 						text = "도적의 장갑 / 치명타 확률 +20%, 회피 확률 +20%, 라운드 시작 시 임시 아이템 2개가 추가로 장착됩니다. 임시 아이템 2개의 등급은 플레이어 레벨에 따라 달라집니다. [아이템 슬롯 3칸 소모]";
 					break;
 				}
+console.log("아이템 정보 불러옴: id "+itm);
 				return text;
 			}
 			
@@ -567,6 +568,7 @@ if(scale==10){
 					text += ');" src="http://cdn.lolchess.gg/images/tft/item/ThiefsGloves.png" onmouseover="showtable('+itm+')" ></image>';
 					break;
 				}
+console.log("아이템 사진 불러옴: id "+itm+", number: "+number+", no1: "+no1+", no2: "+no2);
 				if(pre != text){
 					return text;
 				}else{
@@ -579,6 +581,7 @@ if(scale==10){
 				items[items.length] = newitem;
 				showlog("&nbsp; 아이템이 추가됨: "+item(items[items.length-1]), 1200);
 				renewitem();
+console.warn("아이템 추가됨: id "+newitem+", array "+(items.length-1));
 			}
 			function lnewitem(num){
 				endtable();
@@ -591,6 +594,7 @@ if(scale==10){
 				showlog("&nbsp; 아이템이 추가됨: "+item(items[items.length-1]), 1200);
 				}
 				renewitem();
+console.warn("아이템 조합됨: id "+num+", array "+(completeitem-1));
 			}
 			function delitem(itemno){
 				endtable();
@@ -599,6 +603,7 @@ if(scale==10){
 				items[itemno] = 0;
 				renewitem();
 				}
+console.warn("아이템 제거됨: array "+itemno);
 			}
 			function renewitem(){
 			var itemi = "";
