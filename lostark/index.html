@@ -47,7 +47,6 @@
 			usegold+=tot;
 			usemoney+=mon;
 			total.innerHTML = "총 가격: "+tot+"골드 / 현금으로 환산시: "+mon+"원";
-			sol.innerHTML = "총 사용한 골드: "+usegold+"골드 / 현금으로 환산시: "+usemoney+"원, 성공 횟수: "+succ+"/"+tototal;
 			var per = parseInt(document.getElementById("percent").value);
 			var rand = Math.random();
 			if (rand < (per/100)){
@@ -58,6 +57,7 @@
 				document.getElementById("j").innerHTML = "제련 실패..";
 				tototal++;
 			}
+			sol.innerHTML = "총 사용한 골드: "+usegold+"골드 / 현금으로 환산시: "+usemoney+"원, 성공 횟수: "+succ+"/"+tototal;
 		}
 		function save(){
 			var t1g = parseInt(document.getElementById("t1gold").value);
