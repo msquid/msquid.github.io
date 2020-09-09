@@ -1,6 +1,8 @@
 <html>
  <head>
  <script>
+	 var usegold = 0;
+	 var usemoney = 0;
 		function calc(){
 			var t1 = parseInt(document.getElementById("t1").value);
 			var t2 = parseInt(document.getElementById("t2").value);
@@ -16,11 +18,34 @@
 			var a3g = parseInt(document.getElementById("a3gold").value);
 			var tog = parseInt(document.getElementById("togold").value);
 			var total = document.getElementById("whatgold");
+			var sol = document.getElementById("used");
 			var tot = Math.ceil((t1*t1g)+(t2*t2g)+(t3*t3g)+(a1g*a1/10)+(a2g*a2)+(a3*a3g)+tog);
 			var mon = Math.ceil(tot*1.8);
 			total.innerHTML = "총 가격: "+tot+"골드 / 현금으로 환산시: "+mon+"원";
+			sol.innerHTML = "총 사용한 골드: "+usegold+"골드 / 현금으로 환산시: "+usemoney+"원";
 		}
 		function random(){
+				var t1 = parseInt(document.getElementById("t1").value);
+			var t2 = parseInt(document.getElementById("t2").value);
+			var t3 = parseInt(document.getElementById("t3").value);
+			var t1g = parseInt(document.getElementById("t1gold").value);
+			var t2g = parseInt(document.getElementById("t2gold").value);
+			var t3g = parseInt(document.getElementById("t3gold").value);
+			var a1 = parseInt(document.getElementById("a1").value);
+			var a2 = parseInt(document.getElementById("a2").value);
+			var a3 = parseInt(document.getElementById("a3").value);
+			var a1g = parseInt(document.getElementById("a1gold").value);
+			var a2g = parseInt(document.getElementById("a2gold").value);
+			var a3g = parseInt(document.getElementById("a3gold").value);
+			var tog = parseInt(document.getElementById("togold").value);
+			var total = document.getElementById("whatgold");
+			var tot = Math.ceil((t1*t1g)+(t2*t2g)+(t3*t3g)+(a1g*a1/10)+(a2g*a2)+(a3*a3g)+tog);
+			var mon = Math.ceil(tot*1.8);
+			var sol = document.getElementById("used");
+			usegold+=tot;
+			usemoney+=mon;
+			total.innerHTML = "총 가격: "+tot+"골드 / 현금으로 환산시: "+mon+"원";
+			sol.innerHTML = "총 사용한 골드: "+usegold+"골드 / 현금으로 환산시: "+usemoney+"원";
 			var per = parseInt(document.getElementById("percent").value);
 			var rand = Math.random();
 			if (rand < (per/100)){
@@ -80,6 +105,7 @@
 	<button onclick="calc()">골드 계산</button> <button onclick="random()">제련하기</button>
 	<div id="whatgold">총 가격: 0골드 / 현금으로 환산시: 0원</div>
 	<div id="j">제련 준비중..</div><br>
+	<div id="used">총 사용한 골드: 0골드 / 현금으로 환산시: 0원</div><br>
 	<button onclick="save()">쿠키 저장</button><button onclick="load()">쿠키 불러오기</button>
  </body>
 </html>
