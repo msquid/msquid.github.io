@@ -46,14 +46,13 @@
 			setCookie("a3g",a3g,90);
 		}
 		function load(){
-			alert(getCookie("t1g"));
-			document.getElementById("t1gold").innerHTML = getCookie("t1g");
-			document.getElementById("t2gold").innerHTML = getCookie("t2g");
-			document.getElementById("t3gold").innerHTML = getCookie("t3g");
-			document.getElementById("a1gold").innerHTML = getCookie("a1g");
-			document.getElementById("a2gold").innerHTML = getCookie("a2g");
-			document.getElementById("a3gold").innerHTML = getCookie("a3g");
-			document.getElementById("togold").innerHTML = getCookie("tog");
+			document.getElementById("t1gold").value = getCookie("t1g");
+			document.getElementById("t2gold").value = getCookie("t2g");
+			document.getElementById("t3gold").value = getCookie("t3g");
+			document.getElementById("a1gold").value = getCookie("a1g");
+			document.getElementById("a2gold").value = getCookie("a2g");
+			document.getElementById("a3gold").value = getCookie("a3g");
+			document.getElementById("togold").value = getCookie("tog");
 		}
 		var setCookie = function(name, value, exp) {
 			var date = new Date();
