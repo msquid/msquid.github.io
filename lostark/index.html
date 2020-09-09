@@ -16,8 +16,8 @@
 			var a3g = parseInt(document.getElementById("a3gold").value);
 			var tog = parseInt(document.getElementById("togold").value);
 			var total = document.getElementById("whatgold");
-			var tot = (t1*t1g)+(t2*t2g)+(t3*t3g)+(a1g*a1/10)+(a2g*a2)+(a3*a3g)+tog;
-			var mon = tot*1.8;
+			var tot = Math.ceil((t1*t1g)+(t2*t2g)+(t3*t3g)+(a1g*a1/10)+(a2g*a2)+(a3*a3g)+tog);
+			var mon = Math.ceil(tot*1.8);
 			total.innerHTML = "총 가격: "+tot+"골드 / 현금으로 환산시: "+mon+"원";
 		}
 		function random(){
