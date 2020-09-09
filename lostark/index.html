@@ -1,0 +1,86 @@
+<html>
+ <head>
+ <script>
+		function calc(){
+			var t1 = parseInt(document.getElementById("t1").value);
+			var t2 = parseInt(document.getElementById("t2").value);
+			var t3 = parseInt(document.getElementById("t3").value);
+			var t1g = parseInt(document.getElementById("t1gold").value);
+			var t2g = parseInt(document.getElementById("t2gold").value);
+			var t3g = parseInt(document.getElementById("t3gold").value);
+			var a1 = parseInt(document.getElementById("a1").value);
+			var a2 = parseInt(document.getElementById("a2").value);
+			var a3 = parseInt(document.getElementById("a3").value);
+			var a1g = parseInt(document.getElementById("a1gold").value);
+			var a2g = parseInt(document.getElementById("a2gold").value);
+			var a3g = parseInt(document.getElementById("a3gold").value);
+			var tog = parseInt(document.getElementById("togold").value);
+			var total = document.getElementById("whatgold");
+			var tot = (t1*t1g)+(t2*t2g)+(t3*t3g)+(a1g/10)+a2g+a3g+tog;
+			var mon = tot*1.8;
+			total.innerHTML = "총 가격: "+tot+"골드 / 현금으로 환산시: "+mon+"원";
+		}
+		function random(){
+			var per = parseInt(document.getElementById("percent").value);
+			var rand = Math.random();
+			if (rand < (per/100)){
+				document.getElementById("j").innerHTML = "제련 성공!!";
+			}else{
+				document.getElementById("j").innerHTML = "제련 실패..";
+			}
+		}
+		function save(){
+			var t1g = parseInt(document.getElementById("t1gold").value);
+			var t2g = parseInt(document.getElementById("t2gold").value);
+			var t3g = parseInt(document.getElementById("t3gold").value);
+			var a1g = parseInt(document.getElementById("a1gold").value);
+			var a2g = parseInt(document.getElementById("a2gold").value);
+			var a3g = parseInt(document.getElementById("a3gold").value);
+			var tog = parseInt(document.getElementById("togold").value);
+			setCookie("t1g",t1g,90);
+			setCookie("t2g",t2g,90);
+			setCookie("t3g",t3g,90);
+			setCookie("tog",tog,90);
+			setCookie("a1g",a1g,90);
+			setCookie("a2g",a2g,90);
+			setCookie("a3g",a3g,90);
+		}
+		function load(){
+			alert(getCookie("t1g"));
+			document.getElementById("t1gold").innerHTML = getCookie("t1g");
+			document.getElementById("t2gold").innerHTML = getCookie("t2g");
+			document.getElementById("t3gold").innerHTML = getCookie("t3g");
+			document.getElementById("a1gold").innerHTML = getCookie("a1g");
+			document.getElementById("a2gold").innerHTML = getCookie("a2g");
+			document.getElementById("a3gold").innerHTML = getCookie("a3g");
+			document.getElementById("togold").innerHTML = getCookie("tog");
+		}
+		var setCookie = function(name, value, exp) {
+			var date = new Date();
+			date.setTime(date.getTime() + exp*24*60*60*1000);
+			document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/';
+		};
+		var getCookie = function(name) {
+			var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+			return value? value[2] : null;
+		};
+
+ </script>
+ </head>
+ <body>
+	은총: <input id="t1"></input>, 개당 <input id="t1gold"></input>골드<br>
+	축복: <input id="t2"></input>, 개당 <input id="t2gold"></input>골드<br>
+	가호: <input id="t3"></input>, 개당 <input id="t3gold"></input>골드<br>
+	<br>
+	확률: <input id="percent"></input>%<br>
+	<br>
+	파괴/수호석: <input id="a1"></input>개, 10개당 <input id="a1gold"></input>골드<br>
+	돌파석: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="a2"></input>개, 1개당 <input id="a2gold"></input>골드<br>
+	융화 재료: &nbsp;&nbsp;&nbsp;<input id="a3"></input>개, 1개당 <input id="a3gold"></input>골드<br>
+	제련 비용: <input id="togold"></input>골드<br>
+	<button onclick="calc()">골드 계산</button> <button onclick="random()">제련하기</button>
+	<div id="whatgold">총 가격: 0골드 / 현금으로 환산시: 0원</div>
+	<div id="j">제련 준비중..</div><br>
+	<button onclick="save()">쿠키 저장</button><button onclick="load()">쿠키 불러오기</button>
+ </body>
+</html>
