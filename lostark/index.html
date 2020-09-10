@@ -1,5 +1,12 @@
 <html>
  <head>
+<css>
+	#btn { border-top-left-radius: 5px; border-bottom-left-radius: 5px; margin-right:-4px; }
+	#btn button{ border: 1px solid skyblue; background-color: rgba(0,0,0,0); color: skyblue; padding: 5px; } 
+	#btn button:hover{ color:white; background-color: skyblue; }
+	
+
+	 </css>
  <script>
 	 var usegold = 0;
 	 var usemoney = 0;
@@ -107,11 +114,11 @@
 	돌파석: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="a2" style="text-align:right; width:45px;"></input>개, 1개당 <input id="a2gold" style="text-align:right; width:45px;"></input>골드<br>
 	융화 재료: &nbsp;&nbsp;&nbsp;<input id="a3" style="text-align:right; width:45px;"></input>개, 1개당 <input id="a3gold" style="text-align:right; width:45px;"></input>골드<br>
 	제련 비용: <input id="togold" style="text-align:right; width:45px;"></input>골드<br>
-	<button onclick="calc()">골드 계산</button> <button onclick="random()">제련하기</button>
+	<button onclick="calc()" class="btn">골드 계산</button> <button onclick="random()" class="btn">제련하기</button>
 	<div id="whatgold">총 가격: 0골드 / 현금으로 환산시: 0원</div>
 	<div id="j">제련 준비중..</div><br>
 	<div id="used">총 사용한 골드: 0골드 / 현금으로 환산시: 0원, 성공 횟수: 0/0</div><br>
-	<button onclick="save()">쿠키 저장</button><button onclick="load()">쿠키 불러오기</button>
+	<button onclick="save()" class="btn">쿠키 저장</button><button onclick="load()" class="btn">쿠키 불러오기</button>
 </fieldset> </center>
  </body>
 </html>
