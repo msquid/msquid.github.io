@@ -2,10 +2,8 @@
  <head>
 	<style>
 	#btn { border-top-left-radius: 5px; border-bottom-left-radius: 5px; margin-right:-4px; }
-	#btn button{ border: 1px solid skyblue; background-color: rgba(0,0,0,0); color: skyblue; padding: 5px; } 
-	#btn button:hover{ color:white; background-color: skyblue; }
-	
-
+	#btng button{ border: 1px solid skyblue; background-color: rgba(0,0,0,0); color: skyblue; padding: 5px; } 
+	#btng button:hover{ color:white; background-color: skyblue; }
 	 </style>
  <script>
 	 var usegold = 0;
@@ -111,14 +109,14 @@
 	확률: <input id="percent" style="text-align:right; width:45px;"></input>%<br>
 	<br>
 	파괴/수호석: <input id="a1" style="text-align:right; width:45px;"></input>개, 10개당 <input id="a1gold" style="text-align:right; width:45px;" ></input>골드<br>
-	돌파석: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="a2" style="text-align:right; width:45px;"></input>개, 1개당 <input id="a2gold" style="text-align:right; width:45px;"></input>골드<br>
-	융화 재료: &nbsp;&nbsp;&nbsp;<input id="a3" style="text-align:right; width:45px;"></input>개, 1개당 <input id="a3gold" style="text-align:right; width:45px;"></input>골드<br>
+	돌파석: <input id="a2" style="text-align:right; width:45px;"></input>개, 1개당 <input id="a2gold" style="text-align:right; width:45px;"></input>골드<br>
+	융화 재료: <input id="a3" style="text-align:right; width:45px;"></input>개, 1개당 <input id="a3gold" style="text-align:right; width:45px;"></input>골드<br>
 	제련 비용: <input id="togold" style="text-align:right; width:45px;"></input>골드<br>
-	<button onclick="calc()" class="btn">골드 계산</button> <button onclick="random()" class="btn">제련하기</button>
+	<div class="btng"><button onclick="calc()" class="btn">골드 계산</button> <button onclick="random()" class="btn">제련하기</button></div><br>
 	<div id="whatgold">총 가격: 0골드 / 현금으로 환산시: 0원</div>
 	<div id="j">제련 준비중..</div><br>
 	<div id="used">총 사용한 골드: 0골드 / 현금으로 환산시: 0원, 성공 횟수: 0/0</div><br>
-	<button onclick="save()" class="btn">쿠키 저장</button><button onclick="load()" class="btn">쿠키 불러오기</button>
+	<div class="btng"><button onclick="save()" class="btn">가격 저장</button> <button onclick="load()" class="btn">가격 불러오기</button></div>
 </fieldset> </center>
  </body>
 </html>
